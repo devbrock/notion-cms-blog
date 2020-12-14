@@ -1,7 +1,6 @@
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import Head from "next/head";
-import Link from "next/link";
 
 import { NotionRenderer } from "react-notion";
 
@@ -44,16 +43,63 @@ const Post = ({ blockMap }) => {
       </Head>
       <NotionRenderer
         blockMap={blockMap}
-        fullPage
-        customBlockComponents={{
-          page: ({ blockValue, renderComponent }) => (
-            <Link href={`/${blockValue.id}`}>{renderComponent()}</Link>
-          ),
-        }}
+        // fullPage
+        // customBlockComponents={{
+        //   page: ({ blockValue, renderComponent }) => (
+        //     <Link href={`/${blockValue.id}`}>{renderComponent()}</Link>
+        //   ),
+        // }}
       />
       <style jsx global>{`
+        .notion {
+          max-width: 1024px;
+          margin: 72px auto;
+          font-family: "JetBrains Mono", monospace;
+          color: #fff;
+          font-size: 18px;
+          line-height: 1.6;
+        }
+        .notion-blank {
+          display: none;
+        }
+        .notion-text {
+          margin-bottom: 32px;
+        }
+        h1 {
+          color: #ff0a78;
+          font-weight: 700 !important;
+          font-size: 45px !important;
+          font-style: italic;
+        }
+        h2 {
+          color: #ffe100;
+          font-style: italic;
+        }
+        .notion-page-header {
+          display: none;
+        }
+        .notion-page-cover {
+          margin-top: 32px;
+        }
+        .notion-title {
+          color: #ff0a78;
+        }
+        .notion-callout {
+          background-color: #182635;
+          border-left: 6px;
+          border-left-style: solid;
+          border-color: #5773ff;
+        }
+        .notion-emoji {
+          display: none;
+        }
+        .notion-inline-code {
+          color: #5773ff;
+        }
         div :global(.notion-code) {
           box-sizing: border-box;
+          background-color: #151f28;
+          margin-bottom: 32px;
         }
         body {
           padding: 0;
