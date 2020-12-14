@@ -44,12 +44,12 @@ const Post = ({ blockMap }) => {
       </Head>
       <NotionRenderer
         blockMap={blockMap}
-        // fullPage
-        // customBlockComponents={{
-        //   page: ({ blockValue, renderComponent }) => (
-        //     <Link href={`/${blockValue.id}`}>{renderComponent()}</Link>
-        //   ),
-        // }}
+        fullPage
+        customBlockComponents={{
+          page: ({ blockValue, renderComponent }) => (
+            <Link href={`/${blockValue.id}`}>{renderComponent()}</Link>
+          ),
+        }}
       />
       <style jsx global>{`
         div :global(.notion-code) {
